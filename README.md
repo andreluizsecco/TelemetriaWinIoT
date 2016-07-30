@@ -8,5 +8,6 @@ Projeto de Telemetria com Internet das Coisas (IoT) + Raspberry Pi + Windows IoT
 * **Sensor.OneWire:** Aplicação UWP (referenciando o projeto Sensor.Dht) para o deploy na Raspberry Pi (Lê e grava os dados em BD)
 * **SensorRealTime:** Aplicação ASP.NET SignalR apenas para exibir em tempo real os dados coletados e gravados no BD
 
-###Vídeo-Aula
+###Links
 * Uma Live Demo foi realizada para explicar um pouco sobre o projeto, assista [aqui](https://www.youtube.com/watch?v=zzJXnleN6Q4).
+* Slides apresentados na Live Demo, veja [aqui](http://pt.slideshare.net/andreluizsecco/telemetria-com-a-internet-das-coisas-e-o-microsoft-azure).
