@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+
+    <script src="~/Scripts/jquery.signalR-1.0.0.js"></script>
+    <script src="~/signalr/hubs" type="text/javascript"></script>
+    <script src="~/Scripts/smoothiecharts/smoothiecharts.js"></script>
+    <script type="text/javascript">
+        var registrosTemperatura = new TimeSeries();
+        var registrosUmidade = new TimeSeries();
+        // Cria o proxy
+        var sensorHub = $.connection.sensorHub;
+
+        // Define as funções de atualizaTemperatura e atualizaUmidade, esta função será invocada no broadcast de nosso Hub
+        $.extend(sensorHub.client, {
+            atualizaTemperatura: function (data) {
+                // Atualiza a temperatura
+                $("#temperaturaLabel").text(data + " ºC");
+                // Insere o valor usado no registro de séries
+                registrosTemperatura.append(new Date().getTime(), data);
+            },
+            atualizaUmidade: function (data) {
+                // Atualiza a umidade
+                $("#umidadeLabel").text(data + " %");
+                // Insere o valor usado no registro de séries
+                registrosUmidade.append(new Date().getTime(), data);
+            }
+        });
+
+        // Inicia a conexão
+        $.connection.hub.start(function () {
+            sensorHub.server.iniciarTransmissaoSensor();
+        });
+
+        // Cria o gráfico e define suas opções e séries
+        function criaLinhasNoGrafico() {
+            var temperaturaChart = new SmoothieChart({ millisPerPixel: 30, maxValue: 60, minValue: -10, scaleSmoothing: 0.100, grid: { millisPerLine: 3000 } });
+            var umidadeChart = new SmoothieChart({ millisPerPixel: 30, maxValue: 100, minValue: 0, grid: { millisPerLine: 3000 } });
+
+            var opcoesTemp = {
+                strokeStyle: 'rgba(255, 255, 0, 1)',
+                fillStyle: 'rgba(255, 0, 0, 1)',
+                lineWidth: 1
+            };
+
+            var opcoesHumid = {
+                strokeStyle: 'rgba(0, 255, 255, 1)',
+                fillStyle: 'rgba(0, 255, 255, 1)',
+                lineWidth: 1
+            };
+
+            temperaturaChart.addTimeSeries(registrosTemperatura, opcoesTemp);
+            umidadeChart.addTimeSeries(registrosUmidade, opcoesHumid);
+
+            temperaturaChart.streamTo($("#temperaturaChart").get(0), 1000);
+            umidadeChart.streamTo($("#umidadeChart").get(0), 1000);
+        }
+
+    </script>
+}
+<body onload="criaLinhasNoGrafico()">
+    <h1>Temperatura:&nbsp;<label id="temperaturaLabel"></label></h1>
+    <br />
+    <canvas id="temperaturaChart" width="1000" height="230"></canvas>
+    <h1>Umidade:&nbsp;<label id="umidadeLabel"></label></h1>
+    <br />
+    <canvas id="umidadeChart" width="1000" height="230"></canvas>
+</body>

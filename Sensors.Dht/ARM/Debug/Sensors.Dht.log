@@ -1,0 +1,6 @@
+﻿  pch.cpp
+  Dht11.cpp
+  Dht22.cpp
+     Creating library C:\Projetos\TelemetriaWinIoT\ARM\Debug\Sensors.Dht\Sensors.Dht.lib and object C:\Projetos\TelemetriaWinIoT\ARM\Debug\Sensors.Dht\Sensors.Dht.exp
+  Sensors.Dht.vcxproj -> C:\Projetos\TelemetriaWinIoT\ARM\Debug\Sensors.Dht\Sensors.Dht.dll
+  Sensors.Dht.vcxproj -> C:\Projetos\TelemetriaWinIoT\ARM\Debug\Sensors.Dht\Sensors.Dht.pdb (Partial PDB)

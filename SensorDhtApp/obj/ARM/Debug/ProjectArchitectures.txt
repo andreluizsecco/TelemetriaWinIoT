@@ -1,0 +1,2 @@
+C:\Projetos\TelemetriaWinIoT\SensorDhtApp\SensorDhtApp.csproj;arm
+C:\Projetos\TelemetriaWinIoT\Sensors.Dht\Sensors.Dht.vcxproj;arm

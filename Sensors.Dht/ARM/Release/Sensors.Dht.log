@@ -1,0 +1,6 @@
+﻿  pch.cpp
+  Dht11.cpp
+  Dht22.cpp
+     Creating library D:\Administrativo\Microsoft MSP\Palestras e Minicursos\Telemetria IoT + Microsoft Azure\Projeto do DHT\source\Windows 10 IoT Core\DHT Solution\ARM\Release\Sensors.Dht\Sensors.Dht.lib and object D:\Administrativo\Microsoft MSP\Palestras e Minicursos\Telemetria IoT + Microsoft Azure\Projeto do DHT\source\Windows 10 IoT Core\DHT Solution\ARM\Release\Sensors.Dht\Sensors.Dht.exp
+  Generating code
+LINK : fatal error LNK1257: code generation failed
