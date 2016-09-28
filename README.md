@@ -6,7 +6,7 @@ Projeto de Telemetria com Internet das Coisas (IoT) + Raspberry Pi + Windows IoT
 
 ###Projetos
 * **Sensor.Dht:** Aplicação C++ para leitura afinada do sensor DHT11
-* **Sensor.OneWire:** Aplicação UWP (referenciando o projeto Sensor.Dht) para o deploy na Raspberry Pi (Lê e grava os dados em BD)
+* **SensorDhtApp:** Aplicação UWP (referenciando o projeto Sensor.Dht) para o deploy na Raspberry Pi (Lê e grava os dados em BD)
 * **SensorRealTime:** Aplicação ASP.NET SignalR apenas para exibir em tempo real os dados coletados e gravados no BD
 
 ###Links
