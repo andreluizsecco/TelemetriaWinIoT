@@ -1,6 +1,7 @@
 # TelemetriaWinIoT
 Projeto de Telemetria com Internet das Coisas (IoT) + Raspberry Pi + Windows IoT Core
 
+[![Build status](https://ci.appveyor.com/api/projects/status/b4cr70a604l5in5q?svg=true)](https://ci.appveyor.com/project/andreluizsecco/telemetriawiniot)
 [![Issues open](https://img.shields.io/github/issues-raw/andreluizsecco/telemetriawiniot.svg)](https://github.com/andreluizsecco/telemetriawiniot/issues)
 
 ###Projetos
